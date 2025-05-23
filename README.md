@@ -1,16 +1,22 @@
-## Hi there 👋
+# Hi there, I'm Alejandro 👋
 
-<!--
-**alehardmode/alehardmode** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to my GitHub profile!
 
-Here are some ideas to get you started:
+## 🚀 Featured Project
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### [puntopetanca.es](https://puntopetanca.es)
+PuntoPetanca is a modern platform designed for organizing and managing petanque tournaments.  
+- 🏆 Easily create, organize, and follow petanque tournaments.
+- 🔐 Secure registration and authentication, plus ad-free subscription with Clerk Billing.
+- 🌙 Dark mode for a comfortable visual experience.
+- 🌍 Available in multiple languages to reach the entire community.
+- 🎨 Intuitive and accessible interface built with Next.js, Tailwind CSS and [shadcn/ui](https://ui.shadcn.com/) components.
+- 🚀 Fast, scalable, and built with state-of-the-art technology.
+
+## 📈 GitHub Stats
+
+![alehardmode's GitHub stats](https://github-readme-stats.vercel.app/api?username=alehardmode&show_icons=true&theme=default)
+
+---
+
+Feel free to explore my repositories or connect with me!
