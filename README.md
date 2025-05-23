@@ -2,7 +2,7 @@
 
 Welcome to my GitHub profile!
 
-## 🚀 Featured Project
+## 🚀 Featured Projects
 
 ### [puntopetanca.es](https://puntopetanca.es)
 PuntoPetanca is a modern platform designed for organizing and managing petanque tournaments.  
