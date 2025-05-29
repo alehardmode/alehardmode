@@ -5,13 +5,30 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+
+    // Add body scroll lock when menu is open
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    document.body.style.overflow = '';
 }));
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -27,14 +44,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Enhanced navbar background and shadow on scroll
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.navbar');
+
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 100) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12)';
+        navbar.style.backdropFilter = 'blur(25px)';
     } else {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+        navbar.style.backdropFilter = 'blur(20px)';
     }
+    // Keep navbar always visible
+    navbar.style.transform = 'translateY(0)';
+
+    lastScrollY = currentScrollY;
 });
 
 // Add animation on scroll
@@ -99,23 +128,32 @@ window.addEventListener('load', () => {
     typeWriter(heroTitle, originalText, 80);
 });
 
-// Add active class to current navigation item
+// Add active class to current navigation item with improved detection
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
     let current = '';
+    const scrollPosition = window.scrollY + 200; // Offset for better detection
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 200)) {
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
 
+    // If we're at the top of the page, highlight home
+    if (window.scrollY < 300) {
+        current = 'home';
+    }
+
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
+        const href = link.getAttribute('href');
+        if (href && href.substring(1) === current) {
             link.classList.add('active');
         }
     });
