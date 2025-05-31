@@ -1,0 +1,90 @@
+---
+// Componente Footer
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; 2025 Alejandro. All rights reserved.</p>
+      <div class="made-with-astro">
+        <span>Made with</span>
+        <img src="/src/assets/astro.svg" alt="Astro" class="astro-logo" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Footer */
+  .footer {
+    background: #2d3748;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer p {
+    margin: 0;
+    color: #a0aec0;
+    font-size: 0.95rem;
+  }
+  .made-with-astro {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .made-with-astro:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .astro-logo {
+    height: 24px;
+    width: auto;
+    filter: brightness(1.2) contrast(1.1);
+    transition: all 0.3s ease;
+  }
+
+  .astro-logo:hover {
+    filter: brightness(1.4) contrast(1.2);
+    transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer {
+      padding: 1.5rem 0;
+    }
+
+    .footer p {
+      font-size: 0.9rem;
+    }
+    .made-with-astro {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .astro-logo {
+      height: 20px;
+    }
+
+    .footer-content {
+      gap: 0.75rem;
+    }
+  }
+</style>
