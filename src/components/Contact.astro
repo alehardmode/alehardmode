@@ -1,5 +1,6 @@
 ---
 // Componente Contact Section
+import { SITE_CONFIG } from '../config/site';
 ---
 
 <section id="contact" class="contact">
@@ -13,7 +14,7 @@
         </p>
       </div>
       <div class="contact-links">
-        <a href="mailto:alehardmode@gmail.com" class="contact-link">
+        <a href={`mailto:${SITE_CONFIG.social.email}`} class="contact-link">
           <svg
             width="16"
             height="16"
@@ -26,7 +27,7 @@
             ></path>
           </svg>
         </a>
-        <a href="https://github.com/alehardmode" target="_blank" class="contact-link">
+        <a href={SITE_CONFIG.social.github} target="_blank" class="contact-link">
           <svg
             width="16"
             height="16"
@@ -39,7 +40,7 @@
             ></path>
           </svg>
         </a>
-        <a href="https://linkedin.com/in/alehardmode" target="_blank" class="contact-link">
+        <a href={SITE_CONFIG.social.linkedin} target="_blank" class="contact-link">
           <svg
             width="16"
             height="16"
@@ -52,7 +53,7 @@
             ></path>
           </svg>
         </a>
-        <a href="https://x.com/alehardmode" target="_blank" class="contact-link">
+        <a href={SITE_CONFIG.social.twitter} target="_blank" class="contact-link">
           <svg
             width="16"
             height="16"
