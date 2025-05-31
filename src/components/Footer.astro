@@ -1,5 +1,6 @@
 ---
 // Componente Footer
+import astroLogo from '../assets/astro.svg';
 ---
 
 <footer class="footer">
@@ -8,7 +9,7 @@
       <p>&copy; 2025 Alejandro. All rights reserved.</p>
       <div class="made-with-astro">
         <span>Made with</span>
-        <img src="/src/assets/astro.svg" alt="Astro" class="astro-logo" />
+        <img src={astroLogo.src} alt="Astro" class="astro-logo" />
       </div>
     </div>
   </div>
